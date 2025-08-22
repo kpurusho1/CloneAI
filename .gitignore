@@ -22,7 +22,6 @@ backend/uploads/
 # Screenshots & analysis
 screenshots/
 ui-analysis-report.json
-*.js
 
 # Claude files
 .claude/
@@ -35,3 +34,6 @@ CLAUDE.md
 .env.production
 .env.test
 backend/.env
+
+# Build artifacts
+tsconfig.tsbuildinfo

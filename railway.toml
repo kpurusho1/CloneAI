@@ -1,9 +1,13 @@
 [build]
 builder = "NIXPACKS"
-buildCommand = "pnpm install --no-frozen-lockfile && pnpm run build"
+buildCommand = "rm -f tsconfig.tsbuildinfo && pnpm install --no-frozen-lockfile && pnpm run build"
 
 [deploy]
 startCommand = "pnpm start"
 healthcheckPath = "/"
 healthcheckTimeout = 100
 restartPolicyType = "ON_FAILURE"
+
+[nixpacks]
+include = ["app/**", "components/**", "contexts/**", "hooks/**", "lib/**", "public/**", "types/**", "utils/**", "*.json", "*.js", "*.ts", "*.tsx", "*.mjs"]
+exclude = ["tsconfig.tsbuildinfo", "node_modules"]
